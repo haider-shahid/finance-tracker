@@ -4,5 +4,7 @@
     <strong>Symbol : </strong> <%= @stock.ticker%>
     <strong>Name : </strong> <%= @stock.name%>
     <strong>Latest price : </strong> <%= @stock.last_price%>
+    <%= link_to "Add to My Stock",user_stocks_path(user: current_user, stock_ticker:@stock.ticker),
+                                          class: 'btn btn-success btn-xs',method: :post %>
   </div>
 <% end %>
