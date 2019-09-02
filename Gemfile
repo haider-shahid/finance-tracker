@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
+gem "stock_quote", '~> 3.0.0'
+gem 'hirb'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
