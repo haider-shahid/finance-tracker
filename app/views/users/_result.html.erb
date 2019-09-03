@@ -4,7 +4,18 @@
     <strong>Symbol : </strong> <%= @stock.ticker%>
     <strong>Name : </strong> <%= @stock.name%>
     <strong>Latest price : </strong> <%= @stock.last_price%>
-    <%= link_to "Add to My Stock",user_stocks_path(user: current_user, stock_ticker:@stock.ticker),
-                                          class: 'btn btn-success btn-xs',method: :post %>
+
+
+    <%if current_user.can_add_stocks?(@stock.ticker) %>
+      <%= link_to "Add to My Stock",user_stocks_path(user: current_user, stock_ticker:@stock.ticker),
+                                            class: 'btn btn-success btn-xs',method: :post %>
+    <% else %>
+      <% if current_user.stock_already_exist?(@stock.ticker)%>
+        <span class ="label label-info"> Stock Already Added</span>
+      <% end %>
+      <% if !current_user.under_stocks_limit? %>
+        <span class ="label label-info"> Stock Limit Reached</span>
+       <% end %>
+    <% end %>
   </div>
 <% end %>
