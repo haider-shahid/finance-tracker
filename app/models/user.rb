@@ -6,6 +6,14 @@ class User < ApplicationRecord
   has_many :user_stocks
   has_many :stocks, through: :user_stocks
 
+  def full_name
+    if first_name.present? && last_name.present?
+      return "#{first_name} #{last_name}"
+    else
+      return "Anominous"
+    end
+  end
+
   def stock_already_exist?(ticker_symbol)
     stock_check = Stock.find_by_ticker(ticker_symbol)
     return false unless stock_check
