@@ -37,7 +37,7 @@ gem "stock_quote", '~> 3.0.0'
 gem 'hirb'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
-
+gem 'semantic-ui-sass'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
