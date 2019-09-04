@@ -1,6 +1,5 @@
 class FriendshipsController < ApplicationController
-
-  def  destroy
+  def destroy
     friend = User.find(params[:id])
     flash[:danger] = "#{friend.full_name} is Removed from your friend list"
     @friend_to_delete = Friendship.where(user_id: current_user.id ,friend_id: friend.id).first

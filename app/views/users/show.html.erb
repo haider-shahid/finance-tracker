@@ -1,1 +1,27 @@
 <h1>User Profile</h1>
+<strong>User Name :</strong> <%= @user_to_show.full_name%> <br>
+<strong>Email : </strong> <%= @user_to_show.email%>
+
+<h3>Your Tracking Stocks</h3>
+
+
+<table class="ui selectable celled table">
+  <thead>
+  <tr>
+    <th>Company Name</th>
+    <th>Symbol</th>
+    <th>Last Price</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @stocks.each do |stock| %>
+    <tr>
+      <td><%= stock.name %></td>
+      <td><%= stock.ticker %></td>
+      <td><%= stock.last_price %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to "BACK",my_friends_path ,class: "btn btn-primary" %>

@@ -3,7 +3,7 @@
 <%= form_tag search_friends_path,remote:true, method: :get do %>
   <div class="row">
     <div class="col-md-8">
-      <%= text_field_tag :friend, params[:friend],placeholder:"Enter Name or Email",class:"form-control",
+      <%= text_field_tag :friend_search, params[:friend_search],placeholder:"Enter Name or Email",class:"form-control",
                          autofocus: true%>
     </div>
 

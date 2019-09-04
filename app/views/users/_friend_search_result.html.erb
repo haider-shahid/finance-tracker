@@ -1,0 +1,36 @@
+<p>
+  <div class="row">
+    <div class="col-md-8">
+      <%= bootstrap_flash %>
+    </div>
+  </div>
+</p>
+<% if @users %>
+<table class="ui small table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Profile</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <% if user.id != current_user.id %>
+      <tr>
+        <td><%= user.full_name %></td>
+        <td><%= user.email %></td>
+        <td>
+          <%=  link_to "Profile",user_path(user),class:"btn btn-xs btn-success" %>
+          <% if current_user.is_already_friend?(user) %>
+            <%=  link_to "Add Friend",add_friend_path(frind: user),class:"btn btn-xs btn-success" %>
+          <% else %>
+            <span class ="label label-info"> User is already friend</span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+<% end %>

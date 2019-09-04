@@ -8,6 +8,15 @@ class User < ApplicationRecord
   has_many :friendships
   has_many :friends, through: :friendships
 
+  def self.search(key)
+    user_to_send = User.where("email LIKE ?" ,"%#{key}%")
+    return nil if !user_to_send.exists?
+    user_to_send
+  end
+
+  def is_already_friend?(user_to_check)
+    friendships.where(friend_id: user_to_check.id).count < 1
+  end
   def full_name
     if first_name.present? && last_name.present?
       return "#{first_name} #{last_name}"
