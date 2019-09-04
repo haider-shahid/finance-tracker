@@ -1,0 +1,27 @@
+<%= render 'users/lookup' %>
+<h1 align="center">Your Friends</h1>
+<% if @friendships.size > 0 %>
+  <table class="ui selectable celled table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="2">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @friendships.each do |friend| %>
+      <tr>
+        <td><%= friend.full_name %></td>
+        <td><%= friend.email %></td>
+        <td><%= link_to "View profile",user_path(friend),class: 'btn btn-primary btn-sm'%></td>
+        <td><%= link_to "Remove Friend",friendship_path(friend),method: :delete,class: 'btn btn-danger btn-sm'%></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="page-header text-center">
+    <h1><small>No Friends to show</small></h1>
+  </div>
+<% end %>

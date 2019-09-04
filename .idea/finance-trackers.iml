@@ -59,6 +59,7 @@
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.8.0, ruby-2.6.3-p62 (3)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.7.0, ruby-2.6.3-p62 (3)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.11.1, ruby-2.6.3-p62 (3)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="font-awesome-sass (v5.9.0, ruby-2.6.3-p62 (3)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.4.2, ruby-2.6.3-p62 (3)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hirb (v0.7.3, ruby-2.6.3-p62 (3)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="http-cookie (v1.0.3, ruby-2.6.3-p62 (3)) [gem]" level="application" />

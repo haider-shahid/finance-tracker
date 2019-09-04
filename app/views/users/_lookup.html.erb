@@ -1,0 +1,16 @@
+<h3>Search for Friends</h3>
+
+<%= form_tag search_friends_path,remote:true, method: :get do %>
+  <div class="row">
+    <div class="col-md-8">
+      <%= text_field_tag :friend, params[:friend],placeholder:"Enter Name or Email",class:"form-control",
+                         autofocus: true%>
+    </div>
+
+    <div class="col-md-4">
+      <%= button_tag(type: :submit, class:'btn btn-success') do%>
+        <i class="fas fa-search"></i> Search
+      <% end %>
+    </div>
+  </div>
+<% end %>
